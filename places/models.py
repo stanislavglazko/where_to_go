@@ -20,7 +20,7 @@ class PlaceImage(models.Model):
         verbose_name='Проект',
         default=None,
         on_delete=models.CASCADE,
-        related_name='Изображения',
+        related_name='imgs',
     )
 
     def __str__(self):
