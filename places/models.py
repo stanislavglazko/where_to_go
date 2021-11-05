@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Place(models.Model):
+    placeId = models.CharField('Идентификатор', max_length=200, default=None)
     title = models.CharField('Название', max_length=200)
     description_short = models.TextField('Короткое описание')
     description_long = models.TextField('Длинное описание')
