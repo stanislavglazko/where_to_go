@@ -18,7 +18,10 @@ def show_place(request, place_id):
                 "lat": place.lat,
             }
         }
-    return JsonResponse(place_details)
+    return JsonResponse(
+        place_details,
+        json_dumps_params={'ensure_ascii': False, 'indent': 4},
+        )
 
 
 def index(request):
