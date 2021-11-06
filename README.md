@@ -43,7 +43,7 @@ https://raw.githubusercontent.com/devmanorg/where-to-go-places/master/places/%D0
 
 2) В терминале набрать 
    ```
-   poetry run python manage.py load_place  адрес_до_JSON_файла
+   poetry run python manage.py load_place  адрес_JSON_файла
    ```
 
 
