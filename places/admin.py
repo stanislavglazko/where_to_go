@@ -15,6 +15,7 @@ class ImgInline(SortableInlineAdminMixin, admin.TabularInline):
 
 
 class PlaceAdmin(admin.ModelAdmin):
+    search_fields = ('title',)
     inlines = [
          ImgInline,
     ]
