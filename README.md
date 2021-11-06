@@ -4,6 +4,9 @@ Cайт о самых интересных местах в Москве.
 
 ![](static/mainpage.png)
 
+## Ссылка на сайт
+https://stanislavglazko.pythonanywhere.com/
+
 
 ## Как запустить
 
