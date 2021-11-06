@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'where_to_go',
     'places',
     'adminsortable2',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
