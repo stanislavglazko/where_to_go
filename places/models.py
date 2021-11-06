@@ -26,3 +26,6 @@ class PlaceImage(models.Model):
 
     def __str__(self):
         return f'{self.number} {self.project.title}'
+    
+    class Meta:
+        ordering = ['number']
