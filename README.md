@@ -41,7 +41,11 @@ https://python-poetry.org/docs/#installation
 
 https://raw.githubusercontent.com/devmanorg/where-to-go-places/master/places/%D0%97%D0%B0%D0%B1%D1%80%D0%BE%D1%88%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%BF%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BB%D0%B0%D0%B3%D0%B5%D1%80%D1%8C%20%C2%AB%D0%91%D0%B5%D0%BB%D0%BE%D0%B5%20%D0%BE%D0%B7%D0%B5%D1%80%D0%BE%C2%BB.json
 
-2) В терминале набрать poetry run python manage.py load_place адрес_до_JSON_файла 
+2) В терминале набрать 
+   ```
+   poetry run python manage.py load_place  адрес_до_JSON_файла
+   ```
+
 
 ## Переменные окружения
 
