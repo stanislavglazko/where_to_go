@@ -14,12 +14,11 @@ class Place(models.Model):
 
 
 class PlaceImage(models.Model):
-    image = models.ImageField('Изображение', null=True, blank=True)
+    image = models.ImageField('Изображение')
     number = models.IntegerField('Номер', default=0, blank=True)
     project = models.ForeignKey(
         Place,
         verbose_name='Проект',
-        default=None,
         on_delete=models.CASCADE,
         related_name='imgs',
     )
