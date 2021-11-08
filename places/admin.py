@@ -14,15 +14,14 @@ class ImgInline(SortableInlineAdminMixin, admin.TabularInline):
         return format_html('<img src="{}" height={} />', obj.image.url, 200)
 
 
+@admin.register(Place)
 class PlaceAdmin(admin.ModelAdmin):
     search_fields = ('title',)
     inlines = [
          ImgInline,
     ]
 
+
+@admin.register(PlaceImage)
 class PlaceImageAdmin(admin.ModelAdmin):
     raw_id_fields = ['place']
-
-
-admin.site.register(Place, PlaceAdmin)
-admin.site.register(PlaceImage, PlaceImageAdmin)
