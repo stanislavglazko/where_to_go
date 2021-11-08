@@ -20,6 +20,9 @@ class PlaceAdmin(admin.ModelAdmin):
          ImgInline,
     ]
 
+class PlaceImageAdmin(admin.ModelAdmin):
+    raw_id_fields = ['place']
+
 
 admin.site.register(Place, PlaceAdmin)
-admin.site.register(PlaceImage)
+admin.site.register(PlaceImage, PlaceImageAdmin)
