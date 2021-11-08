@@ -40,7 +40,6 @@ def index(request):
         }
         place_on_map["properties"] = {
             "title": place.title,
-            "placeId": place.placeId,
             "detailsUrl": reverse(
                 'places:place_view',
                 args=[place.id],

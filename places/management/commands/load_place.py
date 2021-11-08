@@ -22,7 +22,6 @@ class Command(BaseCommand):
                     'description_long': place['description_long'],
                     'lng': place['coordinates']['lng'],
                     'lat': place['coordinates']['lat'],
-                    'placeId': place['title'],
                 },
             )
 
