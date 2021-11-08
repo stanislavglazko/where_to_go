@@ -12,22 +12,22 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         for link in options['links']:
-            place = requests.get(link)
-            place.raise_for_status()
-            place = place.json()
-            new_place, created = Place.objects.get_or_create(
-                title=place['title'],
+            place_raw = requests.get(link)
+            place_raw.raise_for_status()
+            place_raw = place_raw.json()
+            place, created = Place.objects.get_or_create(
+                title=place_raw['title'],
                 defaults={
-                    'description_short': place['description_short'],
-                    'description_long': place['description_long'],
-                    'lng': place['coordinates']['lng'],
-                    'lat': place['coordinates']['lat'],
+                    'description_short': place_raw['description_short'],
+                    'description_long': place_raw['description_long'],
+                    'lng': place_raw['coordinates']['lng'],
+                    'lat': place_raw['coordinates']['lat'],
                 },
             )
 
-            for img_link in place['imgs']:
+            for img_link in place_raw['imgs']:
                 response_img = requests.get(img_link)
                 response_img.raise_for_status()
                 content = ContentFile(response_img.content)
-                new_img = PlaceImage(place=new_place)
+                new_img = PlaceImage(place=place)
                 new_img.image.save(img_link, content, save=True)
