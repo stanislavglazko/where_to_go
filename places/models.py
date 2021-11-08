@@ -16,15 +16,14 @@ class Place(models.Model):
 class PlaceImage(models.Model):
     image = models.ImageField('Изображение')
     number = models.IntegerField('Номер', default=0, blank=True)
-    project = models.ForeignKey(
+    place = models.ForeignKey(
         Place,
-        verbose_name='Проект',
+        verbose_name='Место на карте',
         on_delete=models.CASCADE,
         related_name='imgs',
     )
-
     def __str__(self):
-        return f'{self.number} {self.project.title}'
+        return f'{self.number} {self.place.title}'
     
     class Meta:
         ordering = ['number']
