@@ -32,18 +32,16 @@ def index(request):
 
     }
     for place in places:
-        place_on_map = {}
-        place_on_map["type"] = "Feature"
-        place_on_map["geometry"] = {
-            "type": "Point",
-            "coordinates": [place.lng, place.lat]
-        }
-        place_on_map["properties"] = {
-            "title": place.title,
-            "detailsUrl": reverse(
-                'places:place_view',
-                args=[place.id],
-                )
+        place_on_map = {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [place.lng, place.lat]
+            },
+            "properties": {
+                "title": place.title,
+                "detailsUrl": reverse('places:place_view', args=[place.id])
+            },
         }
         places_on_map['features'].append(place_on_map)
 
